@@ -19,3 +19,54 @@ export function otherNews(){
     }
 }
 
+export function latestGallery(){
+    const request = fetch(`${URL}/galleries?_order=desc&_limit=2`, { method: 'GET'})
+                  .then(response => response.json());
+    return{
+        type: 'GET_LATEST_GALLERY',
+        payload:request
+    }
+}
+
+export function latestMusic(){
+    const request = fetch(`${URL}/music?_order=desc&_limit=2`, { method: 'GET'})
+                  .then(response => response.json());
+    return{
+        type: 'GET_MUSIC',
+        payload:request
+    }
+}
+//selectedNews, clearSelectedNews
+export function selectedNews(id){
+    const request = fetch(`${URL}/articles?id=${id}`, { method: 'GET'})
+                  .then(response => response.json());
+    return{
+        type: 'GET_SELECTED_NEWS',
+        payload:request
+    }
+}
+
+export function clearSelectedNews(){
+   
+    return{
+        type: 'CLEAR_SELECTED_NEWS',
+        payload:[]
+    }
+}
+
+export function selectedGallery(id){
+    const request = fetch(`${URL}/galleries?id=${id}`, { method: 'GET'})
+                  .then(response => response.json());
+    return{
+        type: 'GET_SELECTED_GALLERY',
+        payload:request
+    }
+}
+
+export function clearSelectedGallery(){
+   
+    return{
+        type: 'CLEAR_SELECTED_GALLERY',
+        payload:[]
+    }
+}

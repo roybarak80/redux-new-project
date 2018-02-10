@@ -1,14 +1,11 @@
 export default function (state = {}, action) {
     switch (action.type) {
-        case 'GET_LATEST':
-            return { ...state, latest: action.payload };
-        case 'GET_OTHER':
-            return { ...state, other: action.payload };
+        case 'GET_LATEST_GALLERY':
+            return { ...state, latestGallery: action.payload };
 
-        case 'GET_SELECTED_NEWS':
+        case 'GET_SELECTED_GALLERY':
             return { ...state, selected: action.payload };
-
-            case 'CLEAR_SELECTED_NEWS':
+        case 'CLEAR_SELECTED_GALLERY':
             return { ...state, selected: action.payload };
         default:
             return state;

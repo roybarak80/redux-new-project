@@ -1,3 +1,5 @@
+import { GET_LATEST,GET_OTHER } from './types';
+
 const URL = 'http://localhost:3004';
 
 export function latestNews() {
@@ -6,7 +8,7 @@ export function latestNews() {
         })
         .then(response => response.json());
     return {
-        type: 'GET_LATEST',
+        type: GET_LATEST,
         payload: request
     }
 }
@@ -17,7 +19,7 @@ export function otherNews() {
         })
         .then(response => response.json());
     return {
-        type: 'GET_OTHER',
+        type: GET_OTHER,
         payload: request
     }
 }

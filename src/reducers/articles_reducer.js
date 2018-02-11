@@ -1,15 +1,27 @@
 export default function (state = {}, action) {
     switch (action.type) {
         case 'GET_LATEST':
-            return { ...state, latest: action.payload };
+            return { ...state,
+                latest: action.payload
+            };
         case 'GET_OTHER':
-            return { ...state, other: action.payload };
+            return { ...state,
+                other: action.payload
+            };
 
         case 'GET_SELECTED_NEWS':
-            return { ...state, selected: action.payload };
+            return { ...state,
+                selected: action.payload
+            };
 
-            case 'CLEAR_SELECTED_NEWS':
-            return { ...state, selected: action.payload };
+        case 'CLEAR_SELECTED_NEWS':
+            return { ...state,
+                selected: action.payload
+            };
+
+        case 'HANDLE_LIKES_ARTICLES':
+        return { ...state, selected: [action.payload]};
+            
         default:
             return state;
     }

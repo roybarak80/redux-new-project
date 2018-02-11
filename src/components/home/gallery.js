@@ -1,16 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from  'react-router-dom'
 import Slider from 'react-slick';
 
+
 const settings = {
-    dots: false,
-    infinate: true,
+    dots: true,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
-}
+    slidesToScroll: 1,
+    autoplay	:true
+};
 
-const showGallery = ({ latestGallery }) => {
+const showGallery = ({latestGallery}) => {
+    console.log(latestGallery)
     if(latestGallery){
         return(
         <Slider {...settings}>
@@ -30,13 +33,15 @@ const showGallery = ({ latestGallery }) => {
     }
 }
 
+
 const Gallery = (props) => {
-    console.log(props)
     return (
         <div className="home-gallery">
-            <h2>Gallery</h2>
-            {showGallery(props)}
+            <h2>Awesome Galleries</h2>
+             {showGallery(props)}
         </div>
+      
     )
 }
-export default Gallery
+
+export default Gallery;

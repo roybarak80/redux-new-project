@@ -7,6 +7,8 @@ export default function (state = {}, action) {
             return { ...state, selected: action.payload };
         case 'CLEAR_SELECTED_GALLERY':
             return { ...state, selected: action.payload };
+            case 'HANDLE_LIKES_GALLERY':
+            return { ...state, selected: action.payload };
         default:
             return state;
     }
